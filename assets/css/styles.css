@@ -1,0 +1,628 @@
+/* Fuentes*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+:root {
+  --negro: #0000;
+  --rojo: #fd0000;
+  --gris: #aba99c;
+  --amarillo: #ffd700;
+  --grisclaro: #e3e3e3;
+  --vinotinto: #722f37;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto", sans-serif;
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1em;
+}
+body {
+  background-image: url(/assets/img/imgs/fondo.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+.box-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  margin: 8px 20px 8px 20px;
+}
+.left-side {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 10px 5px 8px;
+}
+.left-side i {
+  color: var(--rojo);
+  font-size: 1.5rem;
+}
+
+.users-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#btnNotify {
+  height: 40px;
+  background-color: transparent;
+  border-radius: 30px;
+  border: 1px var(--rojo) solid;
+}
+
+.btn-primary {
+  margin: 0.5rem;
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+}
+#btnRegisterUser {
+  background-color: var(--rojo);
+  color: var(--grisclaro);
+}
+
+/*
+  MAIN STYLES
+*/
+
+main {
+  padding: 0 20px;
+  max-width: 400px;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+/* Box usuario */
+.box-main-usuario {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 15px 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.box-main-usuario i {
+  color: var(--rojo);
+  font-size: 1.5rem;
+  background-color: var(--grisclaro);
+  padding: 10px;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box-main-usuario p {
+  font-weight: bold;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+/* Box movimientos */
+.box-main-movimientos {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 15px 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secundary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--rojo);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.btn-secundary img {
+  width: 30px;
+  height: 30px;
+  
+}
+
+/* Box buttons grid */
+.box-main-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.box-main-buttons img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 8px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.box-main-buttons p {
+  font-size: 0.85rem;
+  color: #333;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Box planificar viaje */
+.box-main-planifViaje {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.box-main-planifViaje button {
+  width: 100%;
+  background-color: var(--rojo);
+  color: white;
+  border: none;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.box-main-planifViaje button img {
+  width: 30px;
+  height: 30px;
+}
+
+.box-main-planifViaje button p {
+  margin: 0;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+/* Box estado lineas */
+.box-main-estadoLineas {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.box-main-estadoLineas > img {
+  width: 25px;
+  height: 25px;
+  margin-bottom: 10px;
+}
+
+.box-main-estadoLineas > p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.box-main-estadoLineas nav ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.box-main-estadoLineas nav ol li button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--grisclaro);
+  border: none;
+  padding: 12px 15px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.box-main-estadoLineas nav ol li button:hover {
+  background-color: #d0d0d0;
+}
+
+.box-main-estadoLineas nav ol li button img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Box ayuda */
+#box-main-ayuda {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+#box-main-ayuda button {
+  width: 100%;
+  background-color: var(--rojo);
+  color: white;
+  border: none;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+#box-main-ayuda button img {
+  width: 30px;
+  height: 30px;
+}
+
+/*
+  FOOTER STYLES
+*/
+
+footer {
+  background-color: var(--rojo);
+  padding: 15px 0;
+  margin-top: 30px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer nav ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+footer nav ol li {
+  flex: 1;
+  text-align: center;
+}
+
+footer nav ol li button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+  transition: opacity 0.3s;
+}
+
+footer nav ol li button:hover {
+  opacity: 0.8;
+}
+
+footer nav ol li button img {
+  width: 30px;
+  height: 30px;
+  
+}
+
+footer nav ol li button strong {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+/* ======================
+   MEDIA QUERIES RESPONSIVE
+   ====================== */
+
+/* Dispositivos móviles pequeños (320px - 480px) */
+@media only screen and (max-width: 480px) {
+  .box-header {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    height: 45px;
+  }
+
+  .left-side i {
+    color: var(--rojo);
+    font-size: 1.5rem;
+  }
+  .left-side img {
+    width: 140px;
+  }
+
+  #btnNotify img {
+    width: 40px;
+  }
+
+  .btn-primary {
+    width: 150px;
+    height: 40px;
+    font-size: 0.85em;
+    margin: 0.3rem;
+  }
+
+  .users-actions {
+    flex-direction: row;
+    gap: 5px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  /* Main responsive */
+  main {
+    padding: 0 15px;
+  }
+
+  .box-main-buttons {
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .box-main-buttons img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .box-main-buttons p {
+    font-size: 0.8rem;
+  }
+
+  .box-main-planifViaje button {
+    padding: 15px;
+    font-size: 0.9rem;
+  }
+
+  .box-main-estadoLineas {
+    padding: 15px;
+  }
+
+  #box-main-ayuda button {
+    padding: 15px;
+    font-size: 0.9rem;
+  }
+
+  /* Footer responsive */
+  footer nav ol li button img {
+    width: 22px;
+    height: 22px;
+  }
+
+  footer nav ol li button strong {
+    font-size: 0.7rem;
+  }
+}
+
+/* Dispositivos móviles medianos (481px - 768px) */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .box-header {
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+
+  .left-side img {
+    width: 140px;
+  }
+
+  .btn-primary {
+    width: 200px;
+    height: 40px;
+    font-size: 0.85em;
+    margin: 0.3rem;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  /* Main responsive */
+  main {
+    max-width: 450px;
+  }
+
+  .box-main-buttons {
+    gap: 12px;
+  }
+
+  .box-main-buttons img {
+    width: 42px;
+    height: 42px;
+  }
+
+  /* Footer responsive */
+  footer nav ol {
+    max-width: 450px;
+  }
+}
+
+/* Tablets (769px - 1024px) */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .box-header {
+    height: 55px;
+    margin: 20px 30px 20px;
+  }
+
+  .left-side img {
+    width: 150px;
+  }
+
+  #btnNotify img {
+    width: 45px;
+  }
+
+  .btn-primary {
+    width: 200px;
+    height: 40px;
+    font-size: 0.85em;
+    margin: 0.3rem;
+  }
+
+  h1 {
+    font-size: 2.2em;
+  }
+
+  /* Main responsive */
+  main {
+    max-width: 500px;
+    padding: 0 25px;
+  }
+
+  .box-main-buttons {
+    gap: 18px;
+    padding: 25px;
+  }
+
+  .box-main-buttons img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .box-main-buttons p {
+    font-size: 0.95rem;
+  }
+
+  .box-main-planifViaje button {
+    padding: 25px;
+    font-size: 1.1rem;
+  }
+
+  .box-main-estadoLineas {
+    padding: 25px;
+  }
+
+  #box-main-ayuda button {
+    padding: 25px;
+    font-size: 1.1rem;
+  }
+
+  /* Footer responsive */
+  footer nav ol {
+    max-width: 500px;
+  }
+
+  footer nav ol li button img {
+    width: 28px;
+    height: 28px;
+  }
+
+  footer nav ol li button strong {
+    font-size: 0.8rem;
+  }
+}
+
+/* Laptops pequeñas (1025px - 1366px) */
+@media only screen and (min-width: 1025px) and (max-width: 1366px) {
+  .box-header {
+    height: 60px;
+    margin: 12px 30px;
+  }
+
+  .left-side img {
+    width: 120px;
+  }
+
+  h1 {
+    font-size: 2.5em;
+  }
+}
+
+/* Pantallas grandes (1367px en adelante) */
+@media only screen and (min-width: 1367px) {
+  .box-header {
+    height: 65px;
+    margin: 15px 40px;
+  }
+
+  .left-side img {
+    width: 100px;
+  }
+
+  #btnNotify img {
+    width: 50px;
+  }
+
+  .btn-primary {
+    width: 200px;
+    height: 40px;
+    font-size: 0.85em;
+    margin: 0.3rem;
+  }
+
+  h1 {
+    font-size: 3em;
+  }
+}
+
+/* Media query para orientación horizontal en móviles */
+@media only screen and (max-height: 500px) and (orientation: landscape) {
+  .box-header {
+    height: 40px;
+    margin: 5px 15px;
+  }
+
+  .users-actions {
+    flex-direction: row;
+  }
+
+  .btn-primary {
+    width: 75px;
+    height: 30px;
+    font-size: 0.8em;
+    margin: 0.2rem;
+  }
+}
+
+/* Media query para dispositivos con alta densidad de píxeles */
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min-resolution: 192dpi) {
+  .left-side img,
+  #btnNotify img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}

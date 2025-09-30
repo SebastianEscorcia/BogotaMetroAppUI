@@ -1,0 +1,388 @@
+/* ========================================
+   MODAL DE REGISTRO - METRO DE BOGOTÁ
+   ======================================== */
+
+/* Overlay de la modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+/* Contenedor principal de la modal */
+.modal-registro {
+  background-color: white;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 400px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Header de la modal */
+.modal-header {
+  background-color: var(--rojo, #fd0000);
+  color: white;
+  padding: 20px;
+  border-radius: 15px 15px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.btn-back {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+.btn-back:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Cuerpo de la modal */
+.modal-body {
+  padding: 30px 25px;
+}
+
+/* Formulario */
+.form-registro {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Grupos de campos */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+/* Labels */
+.form-label {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95rem;
+  margin-bottom: 5px;
+}
+
+.form-label.required::after {
+  content: " *";
+  color: var(--rojo, #fd0000);
+}
+
+/* Inputs */
+.form-input {
+  padding: 12px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #fafafa;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--rojo, #fd0000);
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(253, 0, 0, 0.1);
+}
+
+.form-input:invalid {
+  border-color: #ff6b6b;
+}
+
+.form-input:valid {
+  border-color: #51cf66;
+}
+
+/* Input de fecha personalizado */
+.form-input[type="date"] {
+  color: #666;
+}
+
+.form-input[type="date"]:focus {
+  color: #333;
+}
+
+/* Checkbox personalizado */
+.checkbox-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.checkbox-custom {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  margin-top: 2px;
+  cursor: pointer;
+}
+
+.checkbox-custom input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  z-index: 2;
+  margin: 0;
+}
+
+.checkbox-custom .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.checkbox-custom:hover .checkmark {
+  border-color: var(--rojo, #fd0000);
+  box-shadow: 0 0 0 2px rgba(253, 0, 0, 0.1);
+}
+
+.checkbox-custom input[type="checkbox"]:checked + .checkmark {
+  background-color: var(--rojo, #fd0000);
+  border-color: var(--rojo, #fd0000);
+}
+
+.checkbox-custom input[type="checkbox"]:focus + .checkmark {
+  outline: 2px solid var(--rojo, #fd0000);
+  outline-offset: 2px;
+}
+
+.checkbox-custom .checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 5px;
+  top: 1px;
+  width: 6px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.checkbox-custom input[type="checkbox"]:checked + .checkmark::after {
+  display: block;
+}
+
+.checkbox-label {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.4;
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox-label a {
+  color: var(--rojo, #fd0000);
+  text-decoration: underline;
+}
+
+/* Botones */
+.form-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.btn-guardar {
+  background-color: var(--rojo, #fd0000);
+  color: white;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-guardar:hover {
+  background-color: #e00000;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(253, 0, 0, 0.3);
+}
+
+.btn-guardar:active {
+  transform: translateY(0);
+}
+
+.btn-guardar:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Mensajes de error */
+.error-message {
+  color: #ff6b6b;
+  font-size: 0.85rem;
+  margin-top: 5px;
+  display: none;
+}
+
+.form-group.error .form-input {
+  border-color: #ff6b6b;
+  background-color: #fff5f5;
+}
+
+.form-group.error .error-message {
+  display: block;
+}
+
+/* Loader */
+.loading {
+  display: none;
+  text-align: center;
+  padding: 20px;
+}
+
+.spinner {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid var(--rojo, #fd0000);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 10px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+/* Móviles pequeños */
+@media only screen and (max-width: 480px) {
+  .modal-overlay {
+    padding: 10px;
+  }
+  
+  .modal-registro {
+    max-width: 100%;
+    margin: 0;
+  }
+  
+  .modal-header {
+    padding: 15px 20px;
+  }
+  
+  .modal-title {
+    font-size: 1.3rem;
+  }
+  
+  .modal-body {
+    padding: 20px 15px;
+  }
+  
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .form-input {
+    padding: 10px 12px;
+    font-size: 0.95rem;
+  }
+  
+  .btn-guardar {
+    padding: 12px 15px;
+    font-size: 1rem;
+  }
+}
+
+/* Tablets */
+@media only screen and (min-width: 768px) {
+  .modal-registro {
+    max-width: 450px;
+  }
+  
+  .modal-body {
+    padding: 35px 30px;
+  }
+}
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  .modal-registro {
+    animation: none;
+  }
+  
+  .btn-guardar:hover {
+    transform: none;
+  }
+}
