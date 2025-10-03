@@ -1,0 +1,116 @@
+/* Fuentes*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+:root {
+  --negro: #0000;
+  --rojo: #fd0000;
+  --gris: #aba99c;
+  --amarillo: #ffd700;
+  --grisclaro: #e3e3e3;
+  --vinotinto: #722f37;
+}
+h1{
+  font-family: "Roboto", ans-sesrif;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Oxygen", ans-sesrif;
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1em;
+}
+body {
+  background-image: url(../img/imgs/fondo.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  padding-bottom: 2rem;
+  text-align: center;
+}
+
+.header-b {
+  background-color: #fd0000;
+  padding: 20px;
+  justify-content: center;
+  padding-top: 2rem;
+}
+
+#logo-bienvenida{
+  display: flex;
+  justify-content: center;
+  align-content: baseline;
+  padding-top: 1.5rem;
+  padding-bottom: 0rem;
+}
+section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+h2,h3,h4{
+  font-size: 1.5rem;
+  padding-bottom: 2rem;
+  text-align: center;
+}
+h1{
+  font-size: 2rem;
+  padding-bottom: 6rem;
+}
+a{
+  text-decoration: none;
+  color: #e3e3e3;
+}
+
+.btn-red{
+  background-color: #fd0000;
+  color: #e3e3e3;
+  padding: 1rem;
+  border: none;
+  border-radius: 15px;
+  font-size: 1.1rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  
+}
+
+/* === MEDIA QUERY PARA MÓVILES (Max-width: 600px) === */
+@media only screen and (max-width: 600px) {
+    
+    /* Reducimos el logo para que no sea demasiado grande */
+    #logo-bienvenida img {
+        width: 200px; /* Reducción del ancho del logo */
+    }
+
+    /* Reducimos el tamaño de la fuente para el encabezado principal */
+    h1 {
+        font-size: 1.5rem; /* De 2rem a 1.5rem */
+        padding-bottom: 2rem; /* Reducimos el padding de 4rem a 2rem */
+    }
+
+    /* Reducimos el tamaño de las demás fuentes */
+    h2, h3, h4 {
+        font-size: 1.2rem; /* De 1.5rem a 1.2rem */
+        padding-bottom: 1rem; /* Reducimos el espaciado entre subtítulos */
+    }
+
+    /* Ajustamos el botón para que sea más fácil de tocar, aunque el tamaño actual está bien */
+    .btn-red {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+  }
