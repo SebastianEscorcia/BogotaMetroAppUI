@@ -42,8 +42,12 @@ body {
   font-size: 2.5em;
   font-weight: bold;
   cursor: pointer;
+  
 }
-
+.icono-regreso a{
+  text-decoration: none;
+  color: #fff;
+}
 /* Subtítulos */
 .titulo-seccion {
   font-family: "Open Sans", sans-serif;
