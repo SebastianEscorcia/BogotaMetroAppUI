@@ -1,0 +1,217 @@
+
+body {
+  background-image: url(/assets/img/imgs/fondo.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+
+.contenedor-principal {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Encabezado */
+.encabezado-recarga {
+  background-color: red;
+  color: white;
+  padding: 20px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.encabezado-recarga h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5em;
+  font-weight: 700;
+  margin: 0;
+}
+
+.icono-regreso {
+  position: absolute;
+  left: 15px;
+  font-size: 2.5em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Subtítulos */
+.titulo-seccion {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Sección de valores y saldos */
+.contenedor-valores {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 600px;
+  margin: 20px 0;
+}
+
+.seccion-input,
+.seccion-saldo {
+  flex: 1;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.boton-valor {
+  background-color: white;
+  border: 2px solido red;
+  border-radius: 40px;
+  padding: 10px 20px;
+  font-size: 2em;
+  font-weight: bold;
+  color: black;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.boton-valor:active {
+  transform: scale(0.95);
+}
+
+.saldo-actual {
+  font-size: 2em;
+  font-weight: bold;
+  color: red;
+  padding: 10px 10px;
+}
+
+/* Sección de selección de banco */
+.contenedor-banco {
+  width: 100%;
+  max-width: 400px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.select-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  border-radius: 25px;
+  overflow: hidden;
+  border: 2px solid red;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.select-banco {
+  width: 100%;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  border: none;
+  background-color: #fff;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+/* Estilos para el Checkbox de Autorización */
+.contenedor-autorizacion {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+  font-size: 1em;
+  user-select: none;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  border: 2px solid red;
+  border-radius: 50%; /* Círculo rojo */
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+  background-color: red;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Botón de continuar */
+.boton-continuar {
+  background-color: red;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.5em;
+  font-weight: 700;
+  padding: 15px 40px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-top: 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s;
+}
+
+.boton-continuar:active {
+  transform: scale(0.95);
+}
+
+/* Estilos para pantallas de 768px o menos (móviles y tabletas pequeñas) */
+@media screen and (max-width: 768px) {
+  .mi-elemento {
+    width: 100%;
+    font-size: 14px;
+  }
+}
+
+/* Estilos para pantallas entre 769px y 1024px (tabletas y laptops) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .mi-elemento {
+    width: 70%;
+    font-size: 16px;
+  }
+}
+
+/* Estilos para pantallas de 1025px o más (monitores de escritorio) */
+@media screen and (min-width: 1025px) {
+  .mi-elemento {
+    width: 50%;
+    font-size: 18px;
+  }
+}
